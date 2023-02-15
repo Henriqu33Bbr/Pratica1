@@ -1,14 +1,350 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="hydrated">
+
 <head>
     <meta charset="UTF-8">
+    <style data-styles="">
+        ion-icon {
+            visibility: hidden
+        }
+
+        .hydrated {
+            visibility: inherit
+        }
+    </style>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratica1</title>
-    <link rel="stylesheet/less" type="text/css" href="styles.less" />
-</head>
-<body>
-    
+    <link rel="stylesheet/less" type="text/css" href="style.less">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script type="text/javascript" nomodule=""
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Pokedexxx</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Pokedex</h1>
+            <form action="#" class="pesquisa">
+                <input type="text" class="nome-Pokemon">
+                <button type="submit" class="submit"><ion-icon name="search-outline" role="img" class="md hydrated"
+                        aria-label="search outline"></ion-icon></button>
+            </form>
+        </header>
+        <div class="passar-voltar">
+            <ion-icon name="arrow-redo-outline" role="img" class="md hydrated"
+                aria-label="arrow redo outline"></ion-icon>
+        </div>
+        <div class="container">
+            <div class="pokemons" tabindex="0">
+
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">ivysaur</p>
+                    <p class="id">No2</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">bulbasaur</p>
+                    <p class="id">No1</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">blastoise</p>
+                    <p class="id">No9</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">wartortle</p>
+                    <p class="id">No8</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">venusaur</p>
+                    <p class="id">No3</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">charmander</p>
+                    <p class="id">No4</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">caterpie</p>
+                    <p class="id">No10</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">squirtle</p>
+                    <p class="id">No7</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">charmeleon</p>
+                    <p class="id">No5</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">weedle</p>
+                    <p class="id">No13</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">kakuna</p>
+                    <p class="id">No14</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">metapod</p>
+                    <p class="id">No11</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">charizard</p>
+                    <p class="id">No6</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">pidgeot</p>
+                    <p class="id">No18</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">rattata</p>
+                    <p class="id">No19</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">pidgey</p>
+                    <p class="id">No16</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">butterfree</p>
+                    <p class="id">No12</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">beedrill</p>
+                    <p class="id">No15</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">pidgeotto</p>
+                    <p class="id">No17</p>
+                </div>
+                <div class="passar-poke" tabindex="1">
+                    <p class="nome">raticate</p>
+                    <p class="id">No20</p>
+                </div>
+            </div>
+            <div class="pokemons-info">
+                <div class="img-fundo"><img
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+                        alt="imagem do pokemon"></div>
+                <div class="poke-desc">
+                    <h2>
+                        <span>ivysaur</span>
+                        <span>#2</span>
+                    </h2>
+                    <div class="type">
+                        <div class="element"><img src="assets/icons-elements/grass.svg" alt="sasasa">
+                            <p>grass</p>
+                        </div>
+                        <div class="element" style="display: flex;"><img src="assets/icons-elements/poison.svg"
+                                alt="sasasa">
+                            <p>poison</p>
+                        </div>
+                    </div>
+                    <div class="ability">
+                        <div>
+                            <h3>overgrow</h3>
+                            <span>Acesse <a href="https://bulbapedia.bulbagarden.net/wiki/overgrow_(Ability)"
+                                    target="_blank">aqui</a> para a descrição da ability</span>
+                        </div>
+                        <div>
+                            <h3>chlorophyll</h3>
+                            <span>Acesse <a href="https://bulbapedia.bulbagarden.net/wiki/chlorophyll_(Ability)"
+                                    target="_blank">aqui</a> para a descrição da ability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="ant-prox">
+                <button class="ant expand-hover">
+                    <p>Anterior</p>
+                </button>
+                <button class="prox expand-hover">
+                    <p>Proximo</p>
+                </button>
+            </div>
+        </footer>
+    </main>
+    <article class="segunda-pagina" style="display: flex;">
+        <div class="header">
+            <h1>Pokedex</h1>
+            <div class="passar-voltar">
+                <ion-icon name="arrow-undo-outline" role="img" class="md hydrated"
+                    aria-label="arrow undo outline"></ion-icon>
+                <ion-icon name="arrow-redo-outline" role="img" class="md hydrated"
+                    aria-label="arrow redo outline"></ion-icon>
+            </div>
+        </div>
+        <div class="container">
+            <div class="img-fundo">
+                <div class="conserto-img-poke"><img
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+                        alt="imagem do pokemon" style="width: 150px;"></div>
+            </div>
+            <div class="buttons">
+                <div class="buttons-versions-diff">
+                    <div class="coluna1 coluna">
+                        <button class="shiny">Versão shiny</button>
+                        <button class="esquerda">La ele</button>
+                    </div>
+                    <div class="coluna2 coluna">
+                        <button class="animation">Versão animada</button>
+                    </div>
+                </div>
+                <button>Voltar para o padrão</button>
+            </div>
+        </div>
+    </article>
+    <article class="terceira-pagina" style="display: flex;">
+        <div class="header">
+            <h1>Pokedex</h1>
+            <div class="passar-voltar">
+                <ion-icon name="arrow-undo-outline" role="img" class="md hydrated"
+                    aria-label="arrow undo outline"></ion-icon>
+            </div>
+        </div>
+        <div class="container">
+            <div class="fraquezas">
+                <div class="types" tabindex="0">
+                    <div tabindex="0">
+                        <p>Fogo</p>
+                        <img src="assets/icons-elements/fire.svg" alt="Elemento fogo">
+                    </div>
+                    <div tabindex="0">
+                        <p>Água</p>
+                        <img src="assets/icons-elements/water.svg" alt="Elemento água">
+                    </div>
+                    <div tabindex="0">
+                        <p>Ground</p>
+                        <img src="assets/icons-elements/ground.svg" alt="Elemento ground">
+                    </div>
+                    <div tabindex="0">
+                        <p>gelo</p>
+                        <img src="assets/icons-elements/ice.svg" alt="Elemento gelo">
+                    </div>
+                    <div tabindex="0">
+                        <p>Rock</p>
+                        <img src="assets/icons-elements/rock.svg" alt="Elemento rock">
+                    </div>
+                    <div tabindex="0">
+                        <p>Dark</p>
+                        <img src="assets/icons-elements/dark.svg" alt="Elemento dark">
+                    </div>
+                    <div tabindex="0">
+                        <p>Fada</p>
+                        <img src="assets/icons-elements/fairy.svg" alt="Elemento fada">
+                    </div>
+                    <div tabindex="0">
+                        <p>Psiquico</p>
+                        <img src="assets/icons-elements/psychic.svg" alt="Elemento psiquico">
+                    </div>
+                    <div tabindex="0">
+                        <p>Bug</p>
+                        <img src="assets/icons-elements/bug.svg" alt="Elemento bug">
+                    </div>
+                    <div tabindex="0">
+                        <p>Steel</p>
+                        <img src="assets/icons-elements/steel.svg" alt="Elemento steel">
+                    </div>
+                    <div tabindex="0">
+                        <p>Elétrico</p>
+                        <img src="assets/icons-elements/electric.svg" alt="Elemento elétrico">
+                    </div>
+                    <div tabindex="0">
+                        <p>Grama</p>
+                        <img src="assets/icons-elements/grass.svg" alt="Elemento grama">
+                    </div>
+                    <div tabindex="0">
+                        <p>Voador</p>
+                        <img src="assets/icons-elements/flying.svg" alt="Elemento voador">
+                    </div>
+                    <div tabindex="0" class="focado">
+                        <p>Dragão</p>
+                        <img src="assets/icons-elements/dragon.svg" alt="Elemento dragão">
+                    </div>
+                    <div tabindex="0">
+                        <p>Lutador</p>
+                        <img src="assets/icons-elements/fighting.svg" alt="Elemento lutador">
+                    </div>
+                    <div tabindex="0">
+                        <p>Normal</p>
+                        <img src="assets/icons-elements/normal.svg" alt="Elemento normal">
+                    </div>
+                    <div tabindex="0">
+                        <p>Poison</p>
+                        <img src="assets/icons-elements/poison.svg" alt="Elemento poison">
+                    </div>
+                    <div tabindex="0">
+                        <p>ghost</p>
+                        <img src="assets/icons-elements/ghost.svg" alt="Elemento ghost">
+                    </div>
+                </div>
+                <div class="fraquezas-types">
+                    <div class="buttons">
+                        <button>Mostrar fraquezas</button>
+                        <button>Mostar vantagens</button>
+                    </div>
+                    <div class="elementos">
+                        <div>
+                            <p>2X de dragon</p>
+                            <img src="assets/icons-elements/dragon.svg" alt="Elemento dragon">
+                        </div>
+
+                        <div>
+                            <p>2X de fairy</p>
+                            <img src="assets/icons-elements/fairy.svg" alt="Elemento fairy">
+                        </div>
+
+                        <div>
+                            <p>2X de ice</p>
+                            <img src="assets/icons-elements/ice.svg" alt="Elemento ice">
+                        </div>
+                    </div>
+                </div>
+                <div class="natures">
+                    <div class="options-natures" tabindex="0">
+                        <p tabindex="0">Hardy</p>
+                        <p tabindex="0">Lonely</p>
+                        <p tabindex="0">Brave</p>
+                        <p tabindex="0">Adamant</p>
+                        <p tabindex="0">Naughty</p>
+                        <p tabindex="0">Bold</p>
+                        <p tabindex="0">Docile</p>
+                        <p tabindex="0">Relaxed</p>
+                        <p tabindex="0">Impish</p>
+                        <p tabindex="0">Lax</p>
+                        <p tabindex="0">Modest</p>
+                        <p tabindex="0">Mild</p>
+                        <p tabindex="0">Quiet</p>
+                        <p tabindex="0">Bashful</p>
+                        <p tabindex="0">Rash</p>
+                        <p tabindex="0">Calm</p>
+                        <p tabindex="0">Gentle</p>
+                        <p tabindex="0">Sassy</p>
+                        <p tabindex="0">Careful</p>
+                        <p tabindex="0">Quirky</p>
+                        <p tabindex="0">Timid</p>
+                        <p tabindex="0">Hasty</p>
+                        <p tabindex="0">Serious</p>
+                        <p tabindex="0">Jolly</p>
+                        <p tabindex="0">Naive</p>
+                    </div>
+                    <div class="atributos">
+                        <p>atack</p>
+                        <p>defense</p>
+                        <p>special atack</p>
+                        <p>special defense</p>
+                        <p>speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <script src="./scriptPg1.js"></script>
+    <script src="./scriptPg2.js"></script>
+    <script src="./scriptPg3.js"></script>
+
 </body>
+
 </html>
